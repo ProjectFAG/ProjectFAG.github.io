@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@200&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,600&family=Roboto:wght@100&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    margin-top: 10px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'poppins' , sans-serif;
+    font-size: 15px;
+}
+
+.logo:hover{
+    transform: scale(1.30);
+    transition: 0.5s;
+}
+
+li:hover{
+    transform: scale(1.30);
+    transition: 0.5s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+nav {
+    background-image: linear-gradient(
+   black, #220440
+    ); 
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width:32px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px;
+    transition: 0.8s;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente preto */
+    z-index: 999; /* Certifique-se de que esteja acima de outros elementos */
+}
+
+.nav-list.active ~ .overlay {
+    display: block;
+}
+
+
+
+
+/* Resposividade do Menu */
+@media (max-width: 1300px) {
+    body {
+        overflow-x: hidden;
+    }
+    nav{
+        height: 12vh;
+    }
+
+    .logo-mobile{
+        width: 80px;
+        height: 65px;
+    }
+
+    .logo{
+        margin-top: 0.5rem;
+    }
+    .nav-list {
+        position: absolute;
+        top: 11.8vh;
+        right: 0;
+        width: 50vw;
+        height: 90vh;
+        background-image: linear-gradient(
+        #220440, #000); 
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3 ease-in;
+        z-index: 99999;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }       
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);    
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;   
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);  
+}
+
+.mobile-menu.active .line1, .line2, .line3{
+    transition: 0.8s;
+}
+
+/* DarkMode */
+body{
+    font-family: 'poppins' , sans-serif;
+    background-color: var(--secundary-color);
+    height: 100px;
+    background-size: cover;
+    overflow-x: hidden;
+}/*Cor inicial de background DarkMOde*/
+
+#icon{
+    width: 20px;
+    cursor: pointer;
+}
+
+
+ :root{/*Style DarMode  */
+    --primary-color: #fff;/*Cor do hover primeiro tema*/
+    --secundary-color: #fff;/*Background primeiro tema white*/
+    --primary-color-about: #000;
+    --secundary-color-about: #fff;
+    .dark-mode{
+        --primary-color: white;/*Cor do hover segundo tema*/
+        --secundary-color: black;/*Background segundo tema black*/
+    }
+}
+
+
+/*Body Titulo e Imagem ilustrativa*/
+
+section.titulo{
+    padding: 40px 4%;
+}
+
+.flex{
+    display: flex;
+}
+
+section.titulo-conteudo, .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 50px;
+}
+
+
+.titulo-conteudo h3{
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+    font-size: 32px;
+    font-family: Lucida;
+}
+  
+.titulo-conteudo h3::after{
+    content: attr(data-text); /*Chamar uma propriedade html*/
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: #f2cb05;; /* Cor do texto revelado */
+    overflow: hidden;
+    z-index: 88888;
+    animation: reveal 4s steps(46) infinite alternate;
+}
+
+@keyframes reveal{
+   0%, 100% {
+   width: 0;
+   }
+   100%, 50% {
+   width: 100%;
+   }
+}/*Animação reveal*/
+
+#icon2{
+    width: 450px;
+    margin-top: 7rem;
+}
+
+.perfis-desktop .perfis-name{
+    color: #f2cb05;
+    font-size: 32px;
+    align-items: center;
+    text-align: center;  
+    font-size: 2.5rem;  
+    margin-top: 14rem;
+}
+/* Inicio Carousel */
+
+/* Esta no slide Carousel */
+
+/*Área "Sobre"*/
+.sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+} 
+
+.tag-sobre{
+    color: #f2cb05;
+    font-size: 2.5rem;
+    margin-top: 7rem;
+}
+
+.texto-sobre{
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: justify;
+}
+
+.sobre > h2{
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.sobre > p{
+    font-size: 1.2rem;
+    margin: 2rem 0 3rem;
+
+}/*Tamanho da fonte e ajuste na margin*/
+
+.final-frase{
+    font-size: 1.5rem;
+}/*Tamanho da fonte*/
+
+.dark-mode .sobre{
+    color: white;
+}/*Fonte branca para o dark mode*/
+
+/*Avaliação do site*/
+.rating-alinhamento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.text-rating{    
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif; 
+    padding-bottom: 20px;
+    padding-top: 200px;
+}
+
+
+.dark-mode .text-rating{
+    color:#fff
+}
+
+
+.rating{
+    width: 450px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(
+        #ae7bcc, #610bb8 
+    );
+    border-radius: 20px;
+}
+
+.btn{
+    background: none;
+    border: none;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+}
+
+#emoji{
+    font-size: 40px;
+}
+
+.rating:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 28px #610bb8;
+}/*Efeito shadow e hover na box sem dark mode*/
+
+.dark-mode .rating:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 28px #fff;
+}/*Efeito shadow e hover na box dark mode*/
+.box-rating {
+    margin-bottom: 50px; 
+}
+
+
+/*AQUI COMEÇA O RODAPÉ*/
+footer{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    height: 10vh;
+    font-size: 12px;
+    margin-top: 100px;
+    background-image: linear-gradient(
+       black , #220440
+    ); 
+}
+
+footer h3{
+    margin: 80px;
+
+}
+
+/* Responsividade */
+
+
+@media (max-width: 1300px) {
+    #icon2{
+        width: 300px;
+        height: 200px;
+    }
+    
+    .flex{
+        flex-direction: column;
+    }
+    .flex h3{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .titulo-conteudo h3{
+        font-size: 17px;
+        
+    }
+
+    section.titulo-conteudo, .flex{
+        padding-bottom: 0 auto;
+    }
+
+    /*Sobre*/
+    .sobre .curso{
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .texto-sobre{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .sobre .texto-sobre{
+        font-size: 12px;
+        text-align: justify;
+    }
+
+    .sobre .final-frase{
+        font-size: 16px;
+
+    }
+    .text-rating{    
+        padding-top: 20px;
+    }
+    
+    /*Sobre*/
+
+    .rating{
+        width: 350px;
+        height: 150px;
+       
+    }
+
+    footer{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        height: 10vh;
+        font-size: 8px;
+        margin-top: 100px;
+        background-image: linear-gradient(
+           black , #220440
+        ); 
+    }
+    
+    footer h3{
+        margin: 10px;
+    
+    }
+
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\contatos.css">
+    <title>FAG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="imagens/logo.png"><!-- links  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><!--Fonte-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--NAO SEI -->
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Poppins:wght@100;300&family=Roboto+Slab:wght@100;500;600&family=Rubik:wght@400;600&display=swap" 
+rel="stylesheet"><!--Fonte-->
+    
+</head>
+    
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagens/logo.png" width="100" height="60" class="logo-mobile">
+                </a>
+            </div><!--Logo Menu -->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="perfilandrew.html">Andrew</a></li>
+                <li><a href="perfilfernando.html">Fernando</a></li>
+                <li><a href="perfilgustavo.html">Gustavo</a></li>
+                <li><a href="contatos.html">Contato</a></li>
+                <li class="link"><img src="imagens/lua.png" id="icon"></li><!--Imagem do botão do dark mode-->
+            </ul>
+        </nav>
+    </header>
+
+    <script src="js\contatos.js"></script><!--Dark-Mode-->
+    <main>
+        <div class="logo">
+            <img src="imagens/mail.png" alt="Logo do email" width="60px" height="50px" >
+        </div>
+        <h2>Formulário de Contato</h2>
+        <form action="https://formsubmit.co/projectfag.dev@gmail.com" method="POST" class="form">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" required placeholder="Digite seu nome"/>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required placeholder="Digite seu email"/>
+        <label for="message">Mensagem</label>
+        <textarea name="message" id="message" required placeholder="Escreva a sua mensagem"></textarea>
+        <input type="hidden" name="_captcha" value="false"/><!--Tirar captcha da página-->
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/Index.html"/><!--Ápos enviar formulário ir para página principal-->
+        <button type="submit" class="text-btn">Enviar</button>
+        </form>
+    </main>
+</body>
+
+<footer>
+<h3>Análise e Desenvolvimento de Sistemas</h3>
+<h3>Copyright © 2023 / Project FAG</h3>
+</footer>
+</html>

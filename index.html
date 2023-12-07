@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\slide.css">
+    <title>FAG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="shortcut icon" type="imagex/png" href="imagens/logo.png"><!-- links  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><!--Fonte-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--NAO SEI -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Poppins:wght@100;300&family=Roboto+Slab:wght@100;500;600&family=Rubik:wght@400;600&display=swap" 
+    rel="stylesheet"><!--Fonte-->    
+</head>
+    
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagens/logo.png" width="100" height="60" class="logo-mobile">
+                </a>
+            </div><!--Logo Menu -->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a id="link1">Sobre</a></li>
+                <li><a href="perfilandrew.html">Andrew</a></li>
+                <li><a href="perfilfernando.html">Fernando</a></li>
+                <li><a href="perfilgustavo.html">Gustavo</a></li>
+                <li><a href="contatos.html">Contato</a></li>
+                <li class="link"><img src="imagens/lua.png" id="icon"></li><!--Imagem do botão do dark mode-->
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section class="titulo">
+        <div class="titulo-conteudo">
+            <div class="flex">
+                <h3 data-text="Construindo o Presente e Moldando o Futuro...">Construindo o Presente e Moldando o Futuro...</h3>
+                    <img  src="imagens/imgabout.png" alt="Imagem ilustrativa" id="icon2">
+            </div>    
+        </div>
+    </section>
+
+    <div class="perfis-desktop">
+        <div class="perfis-name">Perfis</div>
+    
+    <!-- Inicio do Carousel -->
+    <section class="slider">
+        <div class="slider-content">
+
+            <input type="radio" name="btn-radio" id="radio1">
+            <input type="radio" name="btn-radio" id="radio2">
+            <input type="radio" name="btn-radio" id="radio3">
+
+            <div class="slide-box primeiro">
+                <a href="perfilandrew.html"><img src="imagens/slidedrew.png" alt="pfslide1"></a>
+            </div>
+
+            <div class="slide-box">
+                <a href="perfilfernando.html"><img src="imagens/slidefer.png" alt="pfslide3"></a>
+            </div>
+
+            <div class="slide-box">
+                <a href="perfilgustavo.html"><img src="imagens/slidegtl.png" alt="pfslide2"></a>
+            </div>
+
+
+            <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+
+            <div class="nav-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
+        </div>
+    </section>
+    <!-- Fim do Carousel -->
+
+    <div class="sobre">
+        <h3 class="tag-sobre">FAG</h3>
+        <h2 class="curso">Análise e Desenvolvimento de Sistemas</h2>
+        <p class="texto-sobre">Somos um grupo dinâmico que busca através da criatividade e de uma dedicação incansável superar os desafios e impulsionar a inovação em quaisquer projetos que enfrentamos.
+            Estimulados pela inovação tecnológica e por criar soluções de problemas, nossa paixão por aprender nos permite estar sempre a um passo a frente, estando sempre prontos para abraçar as mudanças e as demandas do mundo tecnológico que segue sempre em constante evolução.
+            Por isso levamos como um estilo de vida a metodologia do "Life Long Learn", aprendizado continuo. 
+            <h2 class="final-frase">Nunca e cedo ou tarde para aprender algo novo.</h1>
+         </p>
+    </div>
+
+    <h1 class="text-rating">Avalie nosso site</h1><!--Avaliação do site-->
+    <div class="rating-alinhamento">
+        <div class="rating">
+                <h1 id="emoji">&#128512</h1>
+            <div>
+                <button class="btn">&#9733</button>
+                <button class="btn">&#9733</button>
+                <button class="btn">&#9733</button>
+                <button class="btn">&#9733</button>
+                <button class="btn">&#9733</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+
+</body>
+<footer>
+    <h3>Análise e Desenvolvimento de Sistemas</h3>
+    <h3>Copyright © 2023 / Project FAG</h3>
+</footer>
+
+</html>

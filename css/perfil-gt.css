@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@200&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;1,600&family=Roboto:wght@100&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    margin-top: 10px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'poppins' , sans-serif;
+    font-size: 15px;
+}
+
+.logo:hover{
+    transform: scale(1.30);
+    transition: 0.5s;
+}
+
+li:hover{
+    transform: scale(1.30);
+    transition: 0.5s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+nav {
+    background-image: linear-gradient(
+   black, #220440
+    ); 
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width:32px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px;
+    transition: 0.8s;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente preto */
+    z-index: 999; /* Certifique-se de que esteja acima de outros elementos */
+}
+
+.nav-list.active ~ .overlay {
+    display: block;
+}
+
+
+
+
+/* Resposividade do Menu */
+@media (max-width: 1300px) {
+    body {
+        overflow-x: hidden;
+    }
+    nav{
+        height: 12vh;
+    }
+
+    .logo-mobile{
+        width: 80px;
+        height: 65px;
+    }
+
+    .logo{
+        margin-top: 0.5rem;
+    }
+    .nav-list {
+        position: absolute;
+        top: 11.8vh;
+        right: 0;
+        width: 50vw;
+        height: 90vh;
+        background-image: linear-gradient(
+        #220440, #000); 
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3 ease-in;
+        z-index: 99999;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }       
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);    
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;   
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);  
+}
+
+.mobile-menu.active .line1, .line2, .line3{
+    transition: 0.8s;
+}
+/* DarkMode */
+body{
+    font-family: 'poppins' , sans-serif;
+    background-color: var(--secundary-color);
+    height: 100px;
+    background-size: cover;
+    overflow-x: hidden;
+}/*Cor inicial de background DarkMOde*/
+
+#icon{
+    width: 20px;
+    cursor: pointer;
+}
+
+
+ :root{/*Style DarMode  */
+    --primary-color: #fff;/*Cor do hover primeiro tema*/
+    --secundary-color: #fff;/*Background primeiro tema white*/
+    --primary-color-about: #000;
+    --secundary-color-about: #fff;
+    .dark-mode{
+        --primary-color: white;/*Cor do hover segundo tema*/
+        --secundary-color: black;/*Background segundo tema black*/
+    }
+ }/* FIM DarkMode */
+
+ 
+
+/*----------------PERFIL----------------*/
+.flex{
+    display: flex;
+    flex-direction: column; /*Para que tudo dentro dessa class fique em forma de coluna*/
+    align-items: center;
+    text-align: center;
+    padding-left: 350px;
+    padding-right: 350px;
+}
+
+.name{   
+    color:#000;     /*Cor do texto antes de ativar dark mode*/
+    font-size: 38px;  /*Afasta a a imagem e os textos da foto*/
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-me{
+    color:#000;         /*Cor do texto antes de ativar dark mode*/
+    text-align: justify;  /*Texto justificativo*/
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+}
+
+.dark-mode .name{
+    color: #fff;
+}/*Muda a cor do texto quando aplica o dark mode*/
+
+.dark-mode .about-me{
+    color: #fff;
+}/*Muda a cor do texto quando aplica o dark mode*/
+
+.img-perfil{
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+    z-index: 88888;
+}/*Tamanho da imagem*/
+
+/*Aqui começa a Animaçao da Img do perfil*/
+
+.flex .img-perfil:hover{
+    transform: scale(1.10);
+    transition: 0.4s;
+}/*Transição para crescer*/
+
+@keyframes mover{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}/*Animação da foto*/
+
+.flex .img-perfil{
+    position: relative;
+    animation: mover 2s ease-in-out infinite alternate;  
+}/*Efeito flutuar*/
+
+/*Aqui são os icones do linkedin e github*/
+.social-media{
+    cursor: pointer;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.social-media :first-child{
+    margin-right: 15px; /* Ajuste conforme necessário para a separação desejada */
+}
+
+.social-media :hover{
+    transform: scale(1.10);
+}
+
+
+/*----------------LINGUAGENS----------------*/
+.container{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center; 
+    font-family: 'Poppins', sans-serif; 
+    padding-top: 150px; /* Afastar a class da class que esta em cima*/
+
+}
+
+h2{
+    color: #f2cb05;
+    font-size: 38px;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.linguagens{
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif; 
+    padding-bottom: 60px;
+}/*Titulo da box linguagens*/
+
+
+.dark-mode .linguagens{
+    color: #fff;
+}/*Muda a cor do texto quando aplica o dark mode*/
+
+.box{
+    display: flex;
+    justify-content: space-around;
+    width: 900px;                    /*Largura da box*/
+    height: 450px;                   /*Altura da box*/
+    border-radius: 15px;
+    background-image: linear-gradient(
+        #fff , #610bb8
+    );   
+}
+
+.container .linguagens, .box a, .imgbox{
+    margin-bottom: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 50px;
+    max-width: 70%;
+    max-height: 70%; 
+}/*Centraliza os icones da box linguagens*/
+
+
+.box:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 28px #610bb8;
+}/*Efeito shadow e hover na box sem dark mode*/
+
+.dark-mode .box:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 28px #fff;
+}/*Efeito shadow e hover na box dark mode*/
+
+
+
+
+/*----------------PROJETOS----------------*/
+.projetos{
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif; 
+    padding-top: 200px;
+    padding-bottom: 60px;
+}
+
+.dark-mode .projetos{
+    color: #fff;
+}/*Muda a cor do texto quando aplica o dark mode*/
+
+.box-flex{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center; 
+    font-family: 'Poppins', sans-serif; 
+    gap: 50px;
+    cursor: pointer;
+}
+
+.box-p{
+    border-radius: 15px;
+    background-image: linear-gradient(#fff, #610bb8);
+    width: 450px;
+    height: 300px;
+}
+
+.text-box{
+    text-align: center; /* Centralizado o texto */
+    font-size: 22px;
+}
+
+.box-p:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 28px #610bb8;
+}/*Efeito shadow e hover na box sem dark mode*/
+
+.dark-mode .box-p:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 28px #fff;
+}/*Efeito shadow e hover na box dark mode*/
+.dark-mode .certificados{
+    color: #fff;
+}/*Muda a cor do texto quando aplica o dark mode*/
+
+
+
+
+
+
+/*----------------CERTIFICADOS----------------*/
+.certificados{
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif; 
+    padding-top: 120px;
+    padding-bottom: 60px;
+} /*Titulo da box certificados*/
+
+
+.container-c{
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 250px;
+    padding-right: 250px;
+    grid-gap: 30px;
+}
+
+.box-c {
+    border-radius: 15px;
+    background-image: linear-gradient(#fff, #610bb8);
+    width: 450px;
+    height: 300px;
+}
+
+
+.text-box {
+    text-align: center; /* Centralizado o texto */
+    padding: 20px; /* Adicionado espaçamento interno */
+}
+
+.box-c:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 28px #610bb8;
+}/*Efeito shadow e hover na box sem dark mode*/
+
+.dark-mode .box-c:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 28px #fff;
+}/*Efeito shadow e hover na box dark mode*/
+
+
+
+/*AQUI COMEÇA O RODAPÉ*/
+footer{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    height: 10vh;
+    font-size: 12px;
+    margin-top: 100px;
+    background-image: linear-gradient(
+       black , #220440
+    ); 
+}
+
+footer h3{
+    margin: 80px;
+
+}
+
+/* Responsividade */
+
+
+@media screen and (max-width: 1300px){
+
+    /*Menu*/
+    .interface{
+        height: 5vh;
+    }
+
+    .mobile-img{
+        width: 60px;
+        height: 50px;
+        padding-top: 8px;
+    }
+
+    /*Menu*/
+    .menu-desktop{
+        display: none;
+    }
+    
+
+    .flex{
+        display: flex;
+        flex-direction: column; /*Para que tudo dentro dessa class fique em forma de coluna*/
+        align-items: center;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+     
+    
+    .name{   
+        color: #000;     /*Cor do texto antes de ativar dark mode*/
+        font-size: 16px;  /*Afasta a a imagem e os textos da foto*/
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .about-me{
+        color:#000;        /*Cor do texto antes de ativar dark mode*/
+        text-align: justify;  /*Texto justificativo*/
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .social-media{
+        padding-top: 20px;
+    }
+
+    a img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .dark-mode .name{
+        color: #fff;
+    }/*Muda a cor do texto quando aplica o dark mode*/
+    
+    .dark-mode .about-me{
+        color: #fff;
+    }/*Muda a cor do texto quando aplica o dark mode*/
+
+
+
+    /*----------------LINGUAGENS----------------*/
+
+    .especialidades h2{
+        font-size: 30px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center; 
+        font-family: 'Poppins', sans-serif; 
+        padding-top: 40px; /* Afastar a class da class que esta em cima*/
+        cursor: pointer;
+    }
+
+    .especialidades h2{
+        color: #f2cb05;
+        font-size: 32px;
+        text-align: center;
+        padding-top: 100px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .linguagens{
+        text-align: center;
+        font-size: 32px;
+        font-family: 'Poppins', sans-serif; 
+        padding-bottom: 60px;
+    }/*Titulo da box linguagens*/
+
+
+    .dark-mode .linguagens{
+        color: #fff;
+    }/*Muda a cor do texto quando aplica o dark mode*/
+
+    .box{
+        display: flex;
+        justify-content: space-around;
+        width: 70%;                    /*Largura da box*/
+        height: 50%;                   /*Altura da box*/
+        border-radius: 15px;
+        
+        background-image: linear-gradient(
+            #fff , #610bb8
+        );   
+    }
+
+    .container .linguagens, .box a, .imgbox{
+        margin-bottom: 50px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 50px;
+        max-width: 70%;
+        max-height: 70%; 
+    }/*Centraliza os icones da box linguagens*/
+
+
+    .box:hover{
+        transform: scale(1.10);
+        box-shadow: 0 0 28px #610bb8;
+    }/*Efeito shadow e hover na box sem dark mode*/
+
+    .dark-mode .box:hover{
+        transform: scale(1.10);
+        box-shadow: 0 0 28px #fff;
+    }/*Efeito shadow e hover na box dark mode*/
+
+
+    /*----------------PROJETOS----------------*/
+    .projetos{
+        font-size: 32px;
+        font-family: 'Poppins', sans-serif; 
+        padding-top: 100px;
+
+    }
+
+    .dark-mode .projetos{
+        color: #fff;
+    }/*Muda a cor do texto quando aplica o dark mode*/
+
+    .box-flex{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center; 
+        font-family: 'Poppins', sans-serif; 
+        grid-gap: 40px;
+        cursor: pointer;
+    }
+    
+    .box-p{
+        border-radius: 15px;
+        background-image: linear-gradient(#fff, #610bb8);
+        width: 250px;
+        height: 160px;
+    }
+    
+    .text-box{
+        text-align: center; /* Centralizado o texto */
+        font-size: 18px;
+    }
+
+    .box-p:hover{
+        transform: scale(1.10);
+        box-shadow: 0 0 28px #610bb8;
+    }/*Efeito shadow e hover na box sem dark mode*/
+
+    .dark-mode .box-p:hover{
+        transform: scale(1.10);
+        box-shadow: 0 0 28px #fff;
+    }/*Efeito shadow e hover na box dark mode*/
+    .dark-mode .certificados{
+        color: #fff;
+    }/*Muda a cor do texto quando aplica o dark mode*/
+
+
+    /*----------------CERTIFICADOS----------------*/
+    .certificados{
+        padding-top: 100px;
+        padding-bottom: 60px;
+    } /*Titulo da box certificados*/
+    
+    .box-c {
+        border-radius: 15px;
+        background-image: linear-gradient(#fff, #610bb8);
+        width: 250px;
+        height: 160px;
+    }
+    
+    .text-box {
+        text-align: center; /* Centralizado o texto */
+        font-size: 18px;
+    }
+
+    footer{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        height: 10vh;
+        font-size: 8px;
+        margin-top: 50px;
+        background-image: linear-gradient(
+           black , #220440
+        ); 
+    }
+    
+    footer h3{
+        margin: 10px;
+    
+    }
+
+}
